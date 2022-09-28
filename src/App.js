@@ -1,22 +1,52 @@
-import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Switch } from "react-router";
-import Home from "./Components/Home/Home";
-import DocLogin from "./Components/Authentication/Login/docLogin";
-import ClientLogin from "./Components/Authentication/Login/clientLogin";
-import TechLogin from "./Components/Authentication/Login/techLogin";
+// import "./App.css";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { Switch } from "react-router";
+// import Home from "./Components/Home/Home";
+// import DocLogin from "./Components/Authentication/Login/docLogin";
+// import ClientLogin from "./Components/Authentication/Login/clientLogin";
+// import TechLogin from "./Components/Authentication/Login/techLogin";
+// function App() {
+//   return (
+//     <div className="App">
+//       <Router>
+//         <Switch>
+//           <Route path="/" element={Home} />
+//           <Route path="/docLogin" element={DocLogin} />
+//           <Route path="/clientLogin" element={ClientLogin} />
+//           <Route path="/techLogin" element={TechLogin} />
+//         </Switch>
+//       </Router>
+//      <ClientLogin/>
+
+
+//     </div>
+//   );
+// }
+
+// export default App;
+import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import ClientLogin from './Pages/Login/clientLogin';
+
+
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/" element={Home} />
-          <Route path="/docLogin" element={DocLogin} />
-          <Route path="/clientLogin" element={ClientLogin} />
-          <Route path="/techLogin" element={TechLogin} />
-        </Switch>
-      </Router>
+    <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-md w-full space-y-8">
+     <BrowserRouter>
+        <Routes>
+            <Route path="/client" element={<ClientLogin/>} />
+          
+            
+        </Routes>
+      </BrowserRouter>
     </div>
+  </div>
   );
 }
 
