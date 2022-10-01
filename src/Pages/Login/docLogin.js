@@ -23,5 +23,9 @@ import Nav from "../../Components/NavBar/Nav";
 import { Nav2 } from "../../Components/NavBar/Nav2";
 
 export default function DocLogin() {
-  return <Nav />;
+  return (
+    <>
+      <Nav />;
+    </>
+  );
 }
