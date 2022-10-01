@@ -11,42 +11,38 @@
 //       <Router>
 //         <Switch>
 //           <Route path="/" element={Home} />
-//           <Route path="/docLogin" element={DocLogin} />
+// <Route path="/docLogin" element={DocLogin} />
 //           <Route path="/clientLogin" element={ClientLogin} />
 //           <Route path="/techLogin" element={TechLogin} />
 //         </Switch>
 //       </Router>
 //      <ClientLogin/>
 
-
 //     </div>
 //   );
 // }
 
 // export default App;
-import './App.css';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import ClientLogin from './Pages/Login/clientLogin';
-
+import ClientLogin from "./Pages/Login/clientLogin";
+import DocLogin from "./Pages/Login/docLogin";
 
 function App() {
   return (
-    <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-md w-full space-y-8">
-     <BrowserRouter>
-        <Routes>
-            <Route path="/client" element={<ClientLogin/>} />
-          
-            
-        </Routes>
-      </BrowserRouter>
-    </div>
-  </div>
+    <>
+      <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/client" element={<ClientLogin />} />
+              <Route path="/docLogin" element={<DocLogin />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
+    </>
   );
 }
 

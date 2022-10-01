@@ -16,3 +16,12 @@
 //     </p></div>);
 // }
 
+import React from "react";
+import Header from "../../Components/Authentication/Header";
+// import Login from "../../Components/Authentication/Login";
+import Nav from "../../Components/NavBar/Nav";
+import { Nav2 } from "../../Components/NavBar/Nav2";
+
+export default function DocLogin() {
+  return <Nav />;
+}
