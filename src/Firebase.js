@@ -1,7 +1,8 @@
-import { firebase } from "firebase/app";
+import { initializeApp } from "firebase/app";
+import "firebase/compat/auth";
 import {
-  GoogleAuthProvider,
   getAuth,
+  GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -12,13 +13,14 @@ import {
   query,
   collection,
   where,
-  googleProvider,
   getDocs,
   addDoc,
+  getFirestore,
 } from "firebase/firestore";
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyB0-Fl11RW-WlcPnmXVlyj6UJRxN_YETEA",
+  apiKey: `${process.env.REACT_APP_FIREBASE_API_TOKEN}`,
   authDomain: "xbits-clientdb.firebaseapp.com",
   projectId: "xbits-clientdb",
   storageBucket: "xbits-clientdb.appspot.com",
@@ -26,9 +28,9 @@ const firebaseConfig = {
   appId: "1:226862919019:web:5cf5b3040ef65919bab02e",
   measurementId: "G-S9S1PBYTDE",
 };
-firebase.initializeApp(firebaseConfig);
-const auth = getAuth(firebase);
-const db = firebase.firestore();
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore(firebaseApp);
 const provider = new GoogleAuthProvider();
 
 //***ADD THIS AFTER ENABLIGING GOOGLE AUTH***
@@ -91,11 +93,10 @@ const sendPasswordReset = async (email) => {
 const logout = () => {
   signOut(auth);
 };
-
-export default firebase;
+export default db;
 export {
+  firebaseApp,
   auth,
-  db,
   provider,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,

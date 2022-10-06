@@ -28,6 +28,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ClientLogin from "./Pages/Login/clientLogin";
 import DocLogin from "./Pages/Login/docLogin";
+import TechLogin from "./Pages/Login/techLogin";
+import SignUp from "./Components/Authentication/Register/SignUp";
 
 function App() {
   return (
@@ -37,7 +39,9 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/client" element={<ClientLogin />} />
-              <Route path="/docLogin" element={<DocLogin />} />
+              <Route path="/doc" element={<DocLogin />} />
+              <Route path="/tech" element={<TechLogin />} />
+              <Route path="/register" element={<SignUp />} />
             </Routes>
           </BrowserRouter>
         </div>
